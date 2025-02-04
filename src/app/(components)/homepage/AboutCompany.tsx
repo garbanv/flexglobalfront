@@ -1,8 +1,8 @@
 import React from 'react'
 
-type Props = {}
 
-const AboutCompany = (props: Props) => {
+
+const AboutCompany = () => {
   return (
     <section className="my-20">
     <div className="grid md:grid-cols-2 grid-cols-1 gap-x-10 mx-auto max-w-screen-xl">

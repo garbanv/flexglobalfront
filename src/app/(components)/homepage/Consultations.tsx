@@ -1,8 +1,8 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
-type Props = {};
 
-const Consultations = (props: Props) => {
+
+const Consultations = () => {
   return (
     <section   className="relative  w-full  bg-cover bg-center"
     style={{

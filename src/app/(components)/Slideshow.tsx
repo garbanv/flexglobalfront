@@ -1,8 +1,8 @@
 import React from "react";
 
-type Props = {};
 
-const Slideshow = (props: Props) => {
+
+const Slideshow = () => {
   return (
     <section
       className="relative mb-10 w-full h-screen bg-cover bg-center"

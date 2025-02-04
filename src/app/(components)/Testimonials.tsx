@@ -1,8 +1,8 @@
 import React from 'react'
 
-type Props = {}
 
-const Testimonials = (props: Props) => {
+
+const Testimonials = () => {
   return (
     <section className=" py-24 px-4">
   <div className="container mx-auto">

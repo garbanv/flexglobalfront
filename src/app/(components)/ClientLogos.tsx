@@ -1,8 +1,8 @@
 import React from 'react'
 
-type Props = {}
 
-const ClientLogos = (props: Props) => {
+
+const ClientLogos = () => {
   return (
     <section className="bg-grey-800 my-10 bg-black py-10">
     <div className=" mx-auto max-w-screen-xl px-4 ">

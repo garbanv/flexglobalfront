@@ -2,9 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import { FaBagShopping } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
-type Props = {}
 
-export default function WhatWOffer({}: Props) {
+export default function WhatWOffer() {
   return (
     <section className="py-10  w-full ">
         <div className="max-w-screen-xl  mx-auto ">

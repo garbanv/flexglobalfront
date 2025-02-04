@@ -1,10 +1,7 @@
 import React from "react";
-import { FaBagShopping } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa6";
-import Link from "next/link";
-type Props = {};
 
-const Portfolio = (props: Props) => {
+
+const Portfolio = () => {
   return (
     <section className="py-10  w-full ">
       <div className="max-w-screen-xl  mx-auto ">

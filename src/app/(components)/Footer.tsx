@@ -1,9 +1,9 @@
 import React from "react";
 import { FaLocationDot, FaPhone, FaEnvelope } from "react-icons/fa6";
 
-type Props = {};
 
-const Footer = (props: Props) => {
+
+const Footer = () => {
   return (
     
     <footer
