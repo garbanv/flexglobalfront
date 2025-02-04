@@ -1,8 +1,8 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
-type Props = {};
 
-const Team = (props: Props) => {
+
+const Team = () => {
   return (
     <section className="py-10  w-full ">
       <div className="max-w-screen-xl  mx-auto ">
@@ -22,9 +22,7 @@ const Team = (props: Props) => {
                 alt="Team Member"
                 className="w-full h-64 object-cover"
               />
-              {/*    <!-- <div className="absolute top-4 right-4 bg-black bg-opacity-50 text-white text-sm rounded-full px-3 py-1">
-                Tech Lead
-            </div> --> */}
+
               <div className="p-4 text-center absolute w-3/4 -bottom-10 -right-0 bg-white shadow-md">
                 <h2 className="text-xl font-semibold text-gray-800">
                   James Wilson
@@ -45,9 +43,7 @@ const Team = (props: Props) => {
                 alt="Team Member"
                 className="w-full h-64 object-cover"
               />
-              {/*    <!-- <div className="absolute top-4 right-4 bg-black bg-opacity-50 text-white text-sm rounded-full px-3 py-1">
-                Tech Lead
-            </div> --> */}
+        
               <div className="p-4 text-center absolute w-3/4 -bottom-10 -right-0 bg-white shadow-md">
                 <h2 className="text-xl font-semibold text-gray-800">
                   James Wilson
@@ -67,9 +63,7 @@ const Team = (props: Props) => {
                 alt="Team Member"
                 className="w-full h-64 object-cover"
               />
-              {/*    <!-- <div className="absolute top-4 right-4 bg-black bg-opacity-50 text-white text-sm rounded-full px-3 py-1">
-                Tech Lead
-            </div> --> */}
+       
               <div className="p-4 text-center absolute w-3/4 -bottom-10 -right-0 bg-white shadow-md">
                 <h2 className="text-xl font-semibold text-gray-800">
                   James Wilson
@@ -89,9 +83,7 @@ const Team = (props: Props) => {
                 alt="Team Member"
                 className="w-full h-64 object-cover"
               />
-              {/*    <!-- <div className="absolute top-4 right-4 bg-black bg-opacity-50 text-white text-sm rounded-full px-3 py-1">
-                Tech Lead
-            </div> --> */}
+              
               <div className="p-4 text-center absolute w-3/4 -bottom-10 -right-0 bg-white shadow-md">
                 <h2 className="text-xl font-semibold text-gray-800">
                   James Wilson
