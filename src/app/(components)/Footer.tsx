@@ -165,7 +165,7 @@ const Footer = () => {
        
 
         <ul className="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
-          <li> <p className="text-xs text-white">&copy; 2022. Company Name. All rights reserved.</p></li>
+          <li> <p className="text-xs text-white">&copy; {new Date().getFullYear()}. Flex Global. All rights reserved.</p></li>
        {/*    <li>
             <a href="#" className="text-white transition hover:opacity-75"> Terms & Conditions </a>
           </li>
