@@ -6,7 +6,7 @@ const Consultations = () => {
   return (
     <section   className="relative  w-full  bg-cover bg-center"
     style={{
-      backgroundImage: `url('https://img2.rtve.es/i/?w=1600&i=01736123189181.jpg')`,
+      backgroundImage: `url('https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
     }}><div className="absolute inset-0 bg-black opacity-80"></div>
       <div className="max-w-screen-xl  mx-auto ">
         <div className="relative flex rounded-lg  text-white ">
