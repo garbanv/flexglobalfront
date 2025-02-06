@@ -112,7 +112,7 @@ const Nav = () => {
     </div>
       </div>
       <div className=' flex justify-center border border-t border-b'>
-        <img src="/flexGlobalLogoHorizontal.svg" alt="flexGlobalLogoVertical" width={300} height={300}/>
+        <img src="/flexGlobalLogoHorizontal.svg" alt="flexGlobalLogoVertical" width={300} height={100}/>
       </div>
         {/* <nav className="bg-white  dark:bg-gray-900 fixed w-full z-20 top-0  "> */}
       <div className="max-w-screen-xl  flex flex-wrap items-center justify-between mx-auto p-4">

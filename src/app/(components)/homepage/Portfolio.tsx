@@ -24,15 +24,7 @@ const Portfolio = () => {
             <img src="https://dummyimage.com/1000x1000/000/fff" className="rounded-md" alt="image" />
           </div>
 
-          <div className="">
-            <img src="https://dummyimage.com/1000x1000/000/fff" className="rounded-md" alt="image" />
-          </div>
-          <div className="">
-            <img src="https://dummyimage.com/1000x1000/000/fff" className="rounded-md" alt="image" />
-          </div>
-          <div className="">
-            <img src="https://dummyimage.com/1000x1000/000/fff" className="rounded-md" alt="image" />
-          </div>
+       
 
           
         </div>
