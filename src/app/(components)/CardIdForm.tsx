@@ -2,9 +2,9 @@
 import React from "react";
 import { useActionState } from "react";
 import { handleCardIdAction } from "../(actions)/CardIdAction";
-type Props = {};
 
-function CardIdForm({}: Props) {
+
+function CardIdForm() {
   const [state, formAction, isPending] = useActionState(
     handleCardIdAction,
     null

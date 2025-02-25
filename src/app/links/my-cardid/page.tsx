@@ -1,9 +1,9 @@
 import CardIdForm from "@/app/(components)/CardIdForm";
 import React from "react";
 
-type Props = {};
 
-function page({}: Props) {
+
+function page() {
 
   return (
     <section className="bg-gray-50 dark:bg-gray-900 ">
