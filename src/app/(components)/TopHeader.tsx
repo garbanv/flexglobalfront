@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 
-type Props = {}
 
-const TopHeader = (props: Props) => {
+
+const TopHeader = () => {
   return (
     <>
     <div className="flex flex-col md:flex-row justify-between items-center mx-auto max-w-screen-xl py-5 gap-y-2">

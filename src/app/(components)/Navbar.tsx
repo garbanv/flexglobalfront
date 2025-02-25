@@ -9,7 +9,7 @@ import localeStore from "../(stores)/languageStore";
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 const lang = localeStore((state)=>state.locale)
-  let locale = 'en'
+  
 
 
 
@@ -18,7 +18,7 @@ const lang = localeStore((state)=>state.locale)
   const navigationOptions = [
     {
       id: 1,
-      label: locale === 'en' ? 'Home':'Inicio',
+      label: lang === 'en' ? 'Home':'Inicio',
       link: "/",
       subItems: [
         {
@@ -45,7 +45,7 @@ const lang = localeStore((state)=>state.locale)
     },
     {
       id: 2,
-      label: locale === 'en' ? 'Health Plans':'Planes de salud',
+      label: lang === 'en' ? 'Health Plans':'Planes de salud',
       link: "/health-plans",
       subItems: [
         {
@@ -72,7 +72,7 @@ const lang = localeStore((state)=>state.locale)
     },
     {
       id: 3,
-      label: locale === 'en' ? 'Services':'Servicio',
+      label: lang === 'en' ? 'Services':'Servicio',
       link: "/services",
       subItems: [
         {
@@ -153,7 +153,7 @@ const lang = localeStore((state)=>state.locale)
     },
     {
       id: 5,
-      label: locale === 'en' ? 'Recurses':'Recursos',
+      label: lang === 'en' ? 'Recurses':'Recursos',
       link: "/recurses",
       subItems: [
         {

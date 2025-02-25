@@ -1,8 +1,8 @@
 import React from 'react'
 
-type Props = {}
 
-const Loader = (props: Props) => {
+
+const Loader = () => {
   return (
     <center>
     <div className="flex justify-center text-center loader my-20"></div></center>

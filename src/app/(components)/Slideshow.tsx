@@ -23,7 +23,7 @@ const Slideshow = ({ slides }: SlideshowProps) => {
     triggerOnce: true,
   });
 
-  const [ctaIsVisible, setCtaIsVisible]=useState(false)
+  
 
   const { ref:btnRef, inView:btnRefCta} = useInView({
     /* Optional options */
@@ -35,9 +35,9 @@ const Slideshow = ({ slides }: SlideshowProps) => {
   const slideRef = useRef<HTMLElement>(null);
   const titleRef = ref;
 
-  const [isAnimating, setIsAnimating] = useState(true);
+
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slideshowRef = useRef(null);
+
 
   useEffect(() => {
     const intervalId = setInterval(() => {
