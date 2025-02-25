@@ -13,7 +13,7 @@ interface Member {
 }
 
 interface TeamProps {
-  team: {
+  team?: {
     heading: string
     teamCard: Member[]
     teamText: string
@@ -27,20 +27,20 @@ const Team = ({team}: TeamProps) => {
       <div className="max-w-screen-xl  mx-auto ">
         <div className="">
           <h4 className="text-center uppercase underline text-xl my-10 font-bold">
-            {team.teamText}
+            {team?.teamText}
           </h4>
           <h3 className="font-bold text-center text-3xl">
-            {team.heading}
+            {team?.heading}
           </h3>
         </div>
         <div className="grid md:grid-cols-4 grid-cols-1 gap-10 my-10 md:px-0 px-5">
       
-      {team.teamCard.map((member,index)=>{
+      {team?.teamCard.map((member,index)=>{
         return (
           <div className="max-w-xs w-full bg-white shadow-lg rounded-lg " key={index}>
           <div className="relative">
             <img
-              src={process.env.APP_URL+member?.image?.url} 
+              src={process.env.NEXT_PUBLIC_APP_URL+member?.image?.url} 
               alt="Team Member"
               className="w-full h-64 object-cover"
             />

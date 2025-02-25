@@ -1,26 +1,31 @@
 import React from 'react'
+import Loader from '../Loader'
 
 interface AboutProps {
-  about: {
+  about?: {
   imageText: string
   imageDescriptiontext: string 
   aboutCompanyText: string
   title: string 
   description: string
-  image :{
+  image? :{
     url: string
   }
 }
 }
 
 const AboutCompany = ({about}:AboutProps) => {
+
+  if (!about ) {
+    return ''; 
+  }
   return (
     <section className="my-5">
     <div className="grid md:grid-cols-2 grid-cols-1 gap-x-10 mx-auto max-w-screen-xl">
       <div className="relative mx-auto max-w-xl rounded-2xl bg-white shadow-lg">
         <div className="flex items-center justify-center bg-gray-200">
           <img
-            src={process.env.APP_URL+about?.image?.url}
+            src={(process.env.NEXT_PUBLIC_APP_URL as string)+about?.image?.url}
             alt="Family sitting on a couch"
             className="h-auto w-full object-cover"
           />

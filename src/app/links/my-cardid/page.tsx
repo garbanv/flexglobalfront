@@ -17,12 +17,12 @@ function page({}: Props) {
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="max-w-screen-xl mx-auto ">
           <h3 className="relative top-40 text-white font-bold text-[50px] md:px-0 px-5">
-            MY CARD ID
+      {/*       MY CARD ID */}
           </h3>
         </div>
       </div>
-      <div className="flex flex-col items-center  px-6 py-8 mx-auto  lg:py-10">
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+      <div className="max-w-screen-xl py-8 mx-auto  lg:py-10">
+        <div className="w-full  rounded-lg  md:mt-0 sm:max-w-md xl:p-0 ">
           <CardIdForm />
         </div>
       </div>

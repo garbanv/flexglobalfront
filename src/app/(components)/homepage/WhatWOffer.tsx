@@ -1,10 +1,13 @@
+'use client'
 import Link from "next/link";
 import React from "react";
 import { FaBagShopping } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
+import { useInView } from "react-intersection-observer";
+
 
 interface WhatWeOffer {
-  offers: {
+  offers?: {
     subheading: string;
     heading: string;
     offerCard: {
@@ -35,7 +38,7 @@ export default function WhatWOffer({offers}: WhatWeOffer) {
    {offers?.offerCard?.map((offer,index)=>{
     return(       <div className="bg-white shadow-xl p-10 rounded-md" key={index}>
         {/* <FaBagShopping size={50}/> */}
-        <img src={process.env.APP_URL+offer?.image?.url} alt="" />
+        <img src={process.env.NEXT_PUBLIC_APP_URL+offer?.image?.url} alt="" />
             <h3 className="p-5 font-bold">Save your money</h3>
             <p>Lorem ipsum dolor sit amet consectetur.</p> 
             <div className="my-5 flex gap-x-2 items-center" >

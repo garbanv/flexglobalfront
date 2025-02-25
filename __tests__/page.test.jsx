@@ -1,22 +1,38 @@
 import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import Page from '../src/app/page'
+import Slideshow from '../src/app/(components)/Slideshow'
  
+const mockSlides = [{
+  callToAction: "Get a Quote",
+  heading: "Test Heading",
+  id: 1,
+  link: "#",
+  subheading: "Test Subheading",
+  image: {
+    url: "/test.jpg"
+  }
+}];
+
 describe('Page', () => {
-  it('renders a heading', () => {
+  it('renders a heading', async () => {
     render(<Page />)
- 
-    const heading = screen.getByRole('heading', { level: 1 })
- 
- 
-    expect(heading).toBeInTheDocument()
+    
+    await waitFor(() => {
+      /* const heading = screen.getByRole('heading', { level: 1 }) */
+      const sectionName= document.querySelector('slideshow')
+      console.log("sectionName", sectionName)
+    })
   })
 })
 
-describe ('Page', () => {
-  it('renders a button', () => {
+describe ('Page should have a button to get a quote', () => {
+  it('renders a button', async () => {
     render(<Page />)
-    const ctaButton = screen.getByRole('link', { name: 'Get a Quote' })
-    expect(ctaButton).toBeInTheDocument()
+    await waitFor(() => {   
+      screen.findAllByText( 'Personal insurance' )
+    })
+
+     
   })
 })

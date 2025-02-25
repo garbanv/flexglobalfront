@@ -1,9 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import TopHeader from "./TopHeader";
 import Link from "next/link";
 import localeStore from "../(stores)/languageStore";
+
+
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 const lang = localeStore((state)=>state.locale)
@@ -195,6 +197,8 @@ const lang = localeStore((state)=>state.locale)
     setLinksDropdownOpen(!linksDropdownOpen);
   };
 
+
+
   return (
     <nav className="bg-white  dark:bg-gray-900  w-full z-20 top-0  ">
         <TopHeader />
@@ -251,6 +255,16 @@ const lang = localeStore((state)=>state.locale)
               </Link>
             </li>
             <li>
+              <Link
+                href="/health-plans"
+                className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                aria-current="page"
+               
+              >
+                {lang === 'en' ? 'Health Plans':'Planes de salud'}
+              </Link>
+            </li>
+           {/*  <li>
               <button
                 onClick={toggleAboutDropdown}
                 className="flex items-center block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -275,33 +289,30 @@ const lang = localeStore((state)=>state.locale)
               {aboutDropdownOpen && (
                 <ul className="ml-4 md:ml-0 md:absolute z-10 bg-white dark:bg-gray-800 rounded-md shadow-lg "
                 onMouseLeave={()=>setAboutDropdownOpen(!aboutDropdownOpen)}>
-                  <li >
-                    <a
-                      href="https://google.com"
-                      className="block py-2 px-4 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 "
-                      
-                    >
-                      Obamacare
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://google.com"
-                      className="block py-2 px-4 text-gray-900 dark:text-white hover:bg-gray-100 rounded-md dark:hover:bg-gray-700"
-                    >
-                      Individual and Family Group
-                    </a>
-                  </li>
+                  <Link href="/health-plans#Obamacare (ACA)"
+                  className="block py-2 px-4 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                      Obamacare-(ACA)
+                  </Link>
+
+                  <Link href="/health-plans#Individual and Family plans"
+                  className="block py-2 px-4 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                      Individual-and-Family-plans
+                  </Link>
+                  <Link href="/health-plans#Medicare y Medacaid"
+                  className="block py-2 px-4 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                      Medicare-y-Medacaid
+                  </Link>
+              
                 </ul>
               )}
-            </li>
+            </li> */}
             <li>
-              <a
-                href="#"
+              <Link
+                href="/services"
                 className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
-                Services
-              </a>
+                {lang === 'en'? 'Services':'Servicios'}  
+              </Link>
             </li>
             <li>
               <button
@@ -364,7 +375,8 @@ const lang = localeStore((state)=>state.locale)
                 Recursos
               </a>
             </li>
-            <li onClick={()=>updateLang('ES')}>ES</li>
+            <li onClick={()=>updateLang('es')}>ES</li>
+            <li onClick={()=>updateLang("en")}>EN</li>
           </ul>
         </div>
       </div>

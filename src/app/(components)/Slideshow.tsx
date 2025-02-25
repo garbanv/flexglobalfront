@@ -1,38 +1,10 @@
 "use client";
-import { useState, useEffect, useRef,use } from "react";
-
-const servicesData = [
-  {
-    imageUrl:
-      "https://images.unsplash.com/photo-1517554558809-9b4971b38f39?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Business Insurance",
-    description: "Protect your business from unexpected events.",
-    tagline: "Securing Your Dreams",
-    link: "/business-insurance",
-    linkText: "Get a Quote",
-  },
-  {
-    imageUrl:
-      "https://plus.unsplash.com/premium_photo-1661335273735-28702a0e32a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with your image URLs
-    title: "Personal Insurance",
-    description: "Protect yourself and your loved ones.",
-    tagline: "Your Peace of Mind",
-    linkText: "Get a Quote",
-  },
-  {
-    imageUrl:
-      "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Home Insurance",
-    description: "Protect your home and belongings.",
-    tagline: "Safe at Home",
-    link: "/home-insurance",
-    linkText: "Get a Quote",
-  },
-  // ... more services
-];
+import { useState, useEffect, useRef, use, startTransition } from "react";
+import Loader from "./Loader";
+import { useInView } from "react-intersection-observer";
 
 interface SlideshowProps {
-  slides: {
+  slides?: {
     callToAction: string;
     heading: string;
     id: number;
@@ -45,36 +17,89 @@ interface SlideshowProps {
 }
 
 const Slideshow = ({ slides }: SlideshowProps) => {
-  
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 1,
+    triggerOnce: true,
+  });
+
+  const [ctaIsVisible, setCtaIsVisible]=useState(false)
+
+  const { ref:btnRef, inView:btnRefCta} = useInView({
+    /* Optional options */
+   /*  threshold: 1, */
+    triggerOnce: true,
+    delay: 1000,
+  });
+
+  const slideRef = useRef<HTMLElement>(null);
+  const titleRef = ref;
+
+  const [isAnimating, setIsAnimating] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideshowRef = useRef(null);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides?.length);
+      {
+        slides
+          ? setCurrentSlide((prevSlide) => (prevSlide + 1) % slides?.length)
+          : setCurrentSlide(0);
+      }
     }, 5000);
 
     return () => clearInterval(intervalId); // Clean up on unmount
   }, [slides?.length]);
 
   const handlePrevSlide = () => {
-    setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + slides?.length) % slides?.length
-    );
+    startTransition(() => {
+      {
+        slides
+          ? setCurrentSlide(
+              (prevSlide) => (prevSlide - 1 + slides?.length) % slides?.length
+            )
+          : setCurrentSlide(0);
+      }
+    });
   };
 
   const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides?.length);
+    startTransition(() => {
+      {
+        slides
+          ? setCurrentSlide((prevSlide) => (prevSlide + 1) % slides?.length)
+          : setCurrentSlide(0);
+      }
+    });
   };
+  useEffect( () => {
+    const elements = document.querySelectorAll('#slideRef')
+    elements.forEach((element) => {
+      element.classList.remove('slide-top')
+      setTimeout(() => {
+        element.classList.add('slide-top')
+      }, 10)
+    })
 
-  if (!slides || slides?.length === 0) {
-    return <div>No services to display.</div>; // Handle empty services array
+    const ctaButn= document.querySelector('#btnRef')
+    ctaButn?.classList.remove('slide-top')
+    setTimeout(() => {
+      ctaButn?.classList.add('slide-top')
+    }, 300)
+
+   }, [currentSlide]);
+   
+  if (!slides) {
+    return <Loader />;
   }
 
   const currentService = slides[currentSlide];
 
+
+
+
   return (
-    <section
+    <section id="slideshow"
       className="relative mb-10 w-full h-screen bg-cover bg-center transition-all duration-500 bg-fixed" // Added transition
       style={{
         backgroundImage: `url(${process.env.NEXT_PUBLIC_APP_URL}${currentService?.image?.url})`, // Dynamic image URL
@@ -91,13 +116,20 @@ const Slideshow = ({ slides }: SlideshowProps) => {
           <div className="flex-1 text-left text-white transition-all duration-500">
             {" "}
             {/* Added transition */}
-            <p className="text-sm tracking-wide text-gray-300 uppercase transition-all duration-500">
+            <p
+              id="slideRef"
+              ref={titleRef || slideRef}
+              className={`text-sm tracking-wide text-gray-300 uppercase transition-all duration-500 ${ inView ? "slide-top" : ""}`}
+            >
               {" "}
               {/* Added transition */}
-              {currentService?.subheading || "Welcome to FlexGlobal"}{" "}
+              {currentService?.subheading || "Welcome to FlexGlobal"}
               {/* Display tagline or default */}
             </p>
-            <h1 className="mt-4 text-4xl font-bold sm:text-5xl lg:text-6xl transition-all duration-500">
+            <h1 id="slideRef"
+              ref={titleRef || slideRef}
+              className={`mt-4 text-4xl  sm:text-5xl lg:text-6xl transition-all duration-500 font-extrabold ${inView ? "slide-top" : ""}`}
+            >
               {" "}
               {/* Added transition */}
               {currentService?.heading} {/* Dynamic title */}
@@ -106,23 +138,31 @@ const Slideshow = ({ slides }: SlideshowProps) => {
              
               {currentService?.description} 
             </p> */}
-            <a
+            <a id="btnRef"
+              ref={btnRef}
               href={currentService?.link || "#"} // Dynamic link or default
-              className="mt-6 inline-block rounded-lg bg-[#654C21] font-bold px-6 py-3 hover:bg-black text-base font-medium text-white  transition-all duration-500" // Added transition
+              className={`mt-6 inline-block rounded-lg bg-[#654C21] font-bold px-6 py-3 hover:bg-black text-base font-medium text-white  transition-all duration-500 ${
+                btnRefCta ? "slide-top" : ""
+              }`} // Added transition
             >
-              {currentService?.callToAction}{" "}
-              {/* Dynamic link text or default */}
+              {/*  {currentService?.callToAction}{" "} */}
+              Get a quote
             </a>
           </div>
           <div className="ml-4 flex flex-col items-center justify-center space-y-3 transition-all duration-500">
             {" "}
             {/* Added transition */}
-            <button
-              className="bg-opacity-80 hover:bg-opacity-100 h-10 w-10 rounded-full bg-white shadow"
+            <button 
+              ref={titleRef}
+              className={`bg-opacity-80 hover:bg-opacity-100 h-10 w-10 rounded-full bg-white shadow ${
+                inView ? "slide-top" : ""
+              }`}
               onClick={handlePrevSlide}
+      
             >
               <span className="sr-only">Previous</span>
               <svg
+                id="slideshowPrevButton"
                 xmlns="http://www.w3.org/2000/svg"
                 className="mx-auto h-6 w-6 text-gray-800"
                 fill="none"
@@ -138,11 +178,15 @@ const Slideshow = ({ slides }: SlideshowProps) => {
               </svg>
             </button>
             <button
-              className="bg-opacity-80 hover:bg-opacity-100 h-10 w-10 rounded-full bg-white shadow"
+                    ref={titleRef}
+              className={`bg-opacity-80 hover:bg-opacity-100 h-10 w-10 rounded-full bg-white shadow ${
+                inView ? "slide-top" : ""
+              }`}
               onClick={handleNextSlide}
             >
               <span className="sr-only">Next</span>
               <svg
+                id="slideshowNextButton"
                 xmlns="http://www.w3.org/2000/svg"
                 className="mx-auto h-6 w-6 text-gray-800"
                 fill="none"
