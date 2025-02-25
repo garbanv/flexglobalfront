@@ -1,8 +1,9 @@
+
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
 interface ConsultationsProps {
-consultations :{
+consultations? :{
   callToAction : string
   callToActionUrl: string
   content: string 
@@ -15,6 +16,12 @@ consultations :{
 }
 
 const Consultations = ({consultations}: ConsultationsProps) => {
+
+
+
+  if(!consultations){
+    return 'no consultations yet'
+  }
   return (
     <section   className="relative  w-full  bg-full bg-center bg-fixed"
     style={{
@@ -45,11 +52,11 @@ const Consultations = ({consultations}: ConsultationsProps) => {
             </button>
           </div>
 
-          <div className="relative w-1/2 flex justify-center ">
+          <div className="relative md:w-1/2 w-2/2 flex justify-center ">
             <img
-              src={process.env.APP_URL+consultations?.image?.url}
+              src={process.env.NEXT_PUBLIC_APP_URL+consultations?.image?.url}
               alt="Consultant"
-              className="absolute right-0 -bottom-10  rounded-lg  shadow-lg"
+              className="absolute right-0 -bottom-10  rounded-lg  shadow-lg md:block hidden"
               width={500}
               height={500}
             />
