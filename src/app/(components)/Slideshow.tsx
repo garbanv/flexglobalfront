@@ -41,11 +41,11 @@ const Slideshow = ({ slides }: SlideshowProps) => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      {
+      
         slides
           ? setCurrentSlide((prevSlide) => (prevSlide + 1) % slides?.length)
           : setCurrentSlide(0);
-      }
+      
     }, 5000);
 
     return () => clearInterval(intervalId); // Clean up on unmount
@@ -53,23 +53,23 @@ const Slideshow = ({ slides }: SlideshowProps) => {
 
   const handlePrevSlide = () => {
     startTransition(() => {
-      {
+      
         slides
           ? setCurrentSlide(
               (prevSlide) => (prevSlide - 1 + slides?.length) % slides?.length
             )
           : setCurrentSlide(0);
-      }
+      
     });
   };
 
   const handleNextSlide = () => {
     startTransition(() => {
-      {
+      
         slides
           ? setCurrentSlide((prevSlide) => (prevSlide + 1) % slides?.length)
           : setCurrentSlide(0);
-      }
+      
     });
   };
   useEffect( () => {
