@@ -24,7 +24,7 @@ export interface TestimonialsProps {
         heading: string;
         id: number;
         link: string;
-        subheading: string;
+        subHeading: string;
         image: {
           url: string;
         };

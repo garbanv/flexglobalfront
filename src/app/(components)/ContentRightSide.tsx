@@ -16,7 +16,7 @@ type ContentProps = {
 
 const ContentRightSide = ({item}: ContentProps) => {
   return (
-    <section  className="grid md:grid-cols-2 gap-5 items-center md:px-0 px-5 py-20 max-w-screen-xl mx-auto ">
+    <section  className="grid md:grid-cols-2 gap-20 items-center md:px-0 px-5 py-20 max-w-screen-xl mx-auto ">
      <div>
                 <img src={process.env.NEXT_PUBLIC_APP_URL+item?.image.url} alt="flex global" />
               </div>
@@ -33,7 +33,7 @@ const ContentRightSide = ({item}: ContentProps) => {
                   <ReactMarkdown>{item?.content}</ReactMarkdown>
                 </div>
 
-                <div className="flex justify-center py-10">
+                <div className="flex justify-left py-10">
                   <Link href="/">
                     <p className="bg-[#BC9B5F] px-5 py-1 inline text-xs rounded-md uppercase text-white">
                       {item?.buttonText}

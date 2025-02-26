@@ -9,7 +9,7 @@ interface SlideshowProps {
     heading: string;
     id: number;
     link: string;
-    subheading: string;
+    subHeading: string;
     image: {
       url: string;
     };
@@ -39,7 +39,7 @@ const Slideshow = ({ slides }: SlideshowProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
 
-  useEffect(() => {
+/*   useEffect(() => {
     const intervalId = setInterval(() => {
       
         slides
@@ -49,7 +49,7 @@ const Slideshow = ({ slides }: SlideshowProps) => {
     }, 5000);
 
     return () => clearInterval(intervalId); // Clean up on unmount
-  }, [slides?.length]);
+  }, [slides?.length]); */
 
   const handlePrevSlide = () => {
     startTransition(() => {
@@ -100,7 +100,7 @@ const Slideshow = ({ slides }: SlideshowProps) => {
 
   return (
     <section id="slideshow"
-      className="relative mb-10 w-full h-screen bg-cover bg-center transition-all duration-500 bg-fixed" // Added transition
+      className="relative  w-full h-[600px] bg-cover bg-center transition-all duration-500 " // Added transition
       style={{
         backgroundImage: `url(${process.env.NEXT_PUBLIC_APP_URL}${currentService?.image?.url})`, // Dynamic image URL
       }}
@@ -116,19 +116,22 @@ const Slideshow = ({ slides }: SlideshowProps) => {
           <div className="flex-1 text-left text-white transition-all duration-500">
             {" "}
             {/* Added transition */}
+            <div className="flex gap-x-5 items-center place-items-center">
+            <div id="slideRef" className={`text-white w-20 h-10 border-b relative -top-4 ${ inView ? "slide-top" : ""}`} ref={titleRef || slideRef}></div>
             <p
               id="slideRef"
               ref={titleRef || slideRef}
               className={`text-sm tracking-wide text-gray-300 uppercase transition-all duration-500 ${ inView ? "slide-top" : ""}`}
             >
-              {" "}
+              
               {/* Added transition */}
-              {currentService?.subheading || "Welcome to FlexGlobal"}
+              {currentService?.subHeading || "Welcome to FlexGlobal"}
               {/* Display tagline or default */}
             </p>
+            </div>
             <h1 id="slideRef"
               ref={titleRef || slideRef}
-              className={`mt-4 text-4xl  sm:text-5xl lg:text-6xl transition-all duration-500 font-extrabold ${inView ? "slide-top" : ""}`}
+              className={`mt-4 text-4xl w-1/2 sm:text-5xl lg:text-6xl transition-all duration-500 font-extrabold ${inView ? "slide-top" : ""}`}
             >
               {" "}
               {/* Added transition */}
