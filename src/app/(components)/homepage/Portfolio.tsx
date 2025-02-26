@@ -26,7 +26,7 @@ const Portfolio = ({ projects }: ProjectsProps) => {
           </h4>
           <h3 className="font-bold text-center text-3xl">{projects?.heading}</h3>
         </div>
-        <div className="grid md:grid-cols-3 grid-cols-1 gap-10 my-10 cursor-pointer ">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-10 my-10 cursor-pointer md:px-0 px-5 ">
           {projects?.image?.map((image, index) => {
             return (
               <a href={image?.imageLink} className="" key={index}>
