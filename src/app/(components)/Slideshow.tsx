@@ -100,7 +100,7 @@ const Slideshow = ({ slides }: SlideshowProps) => {
 
   return (
     <section id="slideshow"
-      className="relative  w-full h-[600px] bg-cover bg-center transition-all duration-500 " // Added transition
+      className="relative  w-full h-[600px] bg-cover bg-center transition-all duration-500 overflow-hidden" // Added transition
       style={{
         backgroundImage: `url(${process.env.NEXT_PUBLIC_APP_URL}${currentService?.image?.url})`, // Dynamic image URL
       }}
