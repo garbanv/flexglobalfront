@@ -25,7 +25,7 @@ export default function WhatWOffer({ offers }: WhatWeOffer) {
   return (
     <section className="py-10  w-full">
       <div className="max-w-screen-xl  mx-auto ">
-        <div className="">
+        <div className="md:px-0 px-5">
           
           <h4 className="text-center uppercase underline text-xl my-10 font-bold">
             {offers?.subheading}

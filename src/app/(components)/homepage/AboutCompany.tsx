@@ -22,7 +22,7 @@ const AboutCompany = ({about}:AboutProps) => {
   return (
     <section className="my-5">
     <div className="grid md:grid-cols-2 grid-cols-1 gap-x-10 mx-auto max-w-screen-xl">
-      <div className="relative mx-auto max-w-xl rounded-2xl bg-white shadow-lg">
+      <div className="relative mx-auto max-w-xl rounded-2xl bg-white shadow-lg md:px-0 px-5">
         <div className="flex items-center justify-center bg-gray-200">
           <img
             src={(process.env.NEXT_PUBLIC_APP_URL as string)+about?.image?.url}
@@ -37,7 +37,7 @@ const AboutCompany = ({about}:AboutProps) => {
           <p className="text-sm text-center">CEO & Founder</p>
         </div>
       </div>
-      <div>
+      <div className="md:px-0 px-5">
         <h3 className="underline uppercase font-bold">{about?.aboutCompanyText}</h3>
         <h4 className="text-[40px] leading-10 font-bold text-center my-5">{about?.title}</h4>
         <p>{about?.description}</p>
