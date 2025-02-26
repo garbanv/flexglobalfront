@@ -21,6 +21,7 @@ password: string
 }
 const name = formData.get('name')
 const lastname = formData.get('lastname')
+
 try {
     const info = await transporter.sendMail({
         from: 'Flex Global" <garban.valdeon@gmail.com>', 
