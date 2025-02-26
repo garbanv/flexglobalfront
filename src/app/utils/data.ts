@@ -28,7 +28,7 @@ export const getHomepageData = async ({
 }: SetHomeDataProps) => {
   try {
     const data = fetch(
-      `http://localhost:1337/api/homepage?populate=slideshow.image&populate=whatWeOffer.offerCard.image&populate=aboutCompany.image&populate=projects.image.image&populate=getConsultations.image&populate=testimonials.testimonialsCard.image&populate=team.teamCard.image&locale=${lang}`,
+      `${process.env.NEXT_PUBLIC_APP_URL}/api/homepage?populate=slideshow.image&populate=whatWeOffer.offerCard.image&populate=aboutCompany.image&populate=projects.image.image&populate=getConsultations.image&populate=testimonials.testimonialsCard.image&populate=team.teamCard.image&locale=${lang}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_APP_TOKEN}`,
@@ -56,7 +56,7 @@ export const getServicesData = async ({
 }: SetServiceDataProps) => {
   try {
     const data = fetch(
-      `http://localhost:1337/api/service?populate=contentSide.image&locale=${lang}`,
+      `${process.env.NEXT_PUBLIC_APP_URL}/api/service?populate=contentSide.image&populate=featuredImage&locale=${lang}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_APP_TOKEN}`,
@@ -82,7 +82,7 @@ export const getHealthPlansData = async ({
 }: SetHealthPlansDataProps) => {
   try {
     const data = fetch(
-      `http://localhost:1337/api/health-plan?populate=contentSide.image&locale=${lang}`,
+      `${process.env.NEXT_PUBLIC_APP_URL}/api/health-plan?populate=contentSide.image&populate=featuredImage&locale=${lang}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_APP_TOKEN}`,

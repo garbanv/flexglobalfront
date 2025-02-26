@@ -23,11 +23,11 @@ const Page = () => {
     }
   }, [lang]);
 
-  console.log("servidesData", data);
+
   return (
     <div>
       <PagesTopBanner
-        image={"servicesBanner.png"}
+        image={data ? data?.featuredImage.url:''}
         heading1={data ? data?.heading1 : ""}
         heading2={data ? data?.heading2 : ""}
       />

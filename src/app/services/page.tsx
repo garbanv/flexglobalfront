@@ -29,10 +29,11 @@ export default function ServicesPage() {
       }
         
       }, [lang]);
+      console.log("servidesData", data);
 
   return (
     <>
-      <PagesTopBanner image={'servicesBanner.png'} heading1={data ? data?.heading1:''} heading2={data ? data?.heading2:''}/>
+      <PagesTopBanner image={data ? data?.featuredImage.url:''} heading1={data ? data?.heading1:''} heading2={data ? data?.heading2:''}/>
       <div className="max-w-screen-xl mx-auto py-20">
         <div className="grid md:grid-cols-2 gap-5 items-center md:px-0 px-5">
           <div>

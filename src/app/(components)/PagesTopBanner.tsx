@@ -16,6 +16,8 @@ const PagesTopBanner = ({image, heading1,heading2}:PagesTopBanner) => {
     triggerOnce: true,
   });
 
+  console.log("image",image)
+
   const { ref:ref2, inView:inView2 } = useInView({
     /* Optional options */
     threshold: 0.5,
@@ -30,7 +32,7 @@ const PagesTopBanner = ({image, heading1,heading2}:PagesTopBanner) => {
           id="banner"
           className="relative  w-full h-[500px] slide-bck-center"
           style={{
-            backgroundImage: `url('/${image}')`,
+            backgroundImage: `url(${process.env.NEXT_PUBLIC_APP_URL}${image})`,
           }}
         >
           {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}

@@ -8,6 +8,9 @@ type ContentProps = {
     contentTitleLine2: string;
     content: string;
     buttonText: string;
+    image:{
+      url:string
+    }
   };
 };
 
@@ -37,7 +40,7 @@ const ContentLeftSide = ({ item }: ContentProps) => {
         </div>
       </div>
       <div>
-        <img src="/asesoria.png" alt="flex global" />
+        <img src={process.env.NEXT_PUBLIC_APP_URL+item?.image.url} alt="flex global" />
       </div>
     </section>
   );

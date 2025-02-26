@@ -31,6 +31,9 @@ export default function Home() {
   }
     
   }, [lang]);
+
+
+  console.log("homeData", homeData);
   return (
     <>
     {error && <div className="bg-red-800 p-2 text white">{}</div>}
@@ -39,8 +42,8 @@ export default function Home() {
       <AboutCompany about={homeData?.data?.aboutCompany} />
       <Portfolio projects={homeData?.data?.projects} />
       <Consultations consultations={homeData?.data?.getConsultations} />
-      <Testimonials testimonials={homeData?.data?.testimonials} />
-      <ClientLogos />
+  {/*     <Testimonials testimonials={homeData?.data?.testimonials} /> */}
+   {/*    <ClientLogos /> */}
       <Team team={homeData?.data?.team} />
     </>
   );

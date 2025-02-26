@@ -8,6 +8,9 @@ type ContentProps = {
         contentTitleLine2:string,
         content:string,
         buttonText:string
+        image:{
+          url:string
+        }
     }
 }
 
@@ -15,7 +18,7 @@ const ContentRightSide = ({item}: ContentProps) => {
   return (
     <section  className="grid md:grid-cols-2 gap-5 items-center md:px-0 px-5 py-20 max-w-screen-xl mx-auto ">
      <div>
-                <img src="/asesoria.png" alt="flex global" />
+                <img src={process.env.NEXT_PUBLIC_APP_URL+item?.image.url} alt="flex global" />
               </div>
               <div>
                 <div className="mb-10">
