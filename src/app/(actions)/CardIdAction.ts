@@ -19,13 +19,15 @@ interface CardData {
 email: string
 password: string
 }
+const name = formData.get('name')
+const lastname = formData.get('lastname')
 
 try {
     const info = await transporter.sendMail({
-        from: '"Maddison Foo Koch 👻" <garban.valdeon@gmail.com>', // sender address
+        from: 'Flex Global" <garban.valdeon@gmail.com>', 
         to: "garbanm@gmail.com", // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
+        subject: "CardID request", // Subject line
+        text: `Hello, ${name} ${lastname} is requesting a card id`, // plain text body
       /*   html: "<b>Hello world?</b>", // html body */
       });
       console.log("info", info)
