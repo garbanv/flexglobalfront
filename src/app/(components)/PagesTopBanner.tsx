@@ -16,7 +16,7 @@ const PagesTopBanner = ({image, heading1,heading2}:PagesTopBanner) => {
     triggerOnce: true,
   });
 
-  console.log("image",image)
+
 
   const { ref:ref2, inView:inView2 } = useInView({
     /* Optional options */

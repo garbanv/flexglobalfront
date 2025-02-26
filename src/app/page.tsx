@@ -13,6 +13,7 @@ import { getHomepageData } from "./utils/data";
 import localeStore from "./(stores)/languageStore";
 
 import { HomeData } from "./utils/homeTypes";
+import PagesTopBanner from "./(components)/PagesTopBanner";
 
 export default function Home() {
  
@@ -32,12 +33,23 @@ export default function Home() {
     
   }, [lang]);
 
+  const slideshowImage = homeData?.data?.slideshow?.length 
+  ? homeData.data.slideshow[0].image?.url 
+  : '';
 
-  console.log("homeData", homeData);
+  const slideshowHeading1 = homeData?.data?.slideshow?.length 
+  ? homeData.data.slideshow[0]?.subHeading
+  : '';
+  const slideshowHeading2 = homeData?.data?.slideshow?.length 
+  ? homeData.data.slideshow[0]?.heading
+  : '';
+
+  console.log("homeData", homeData)
   return (
     <>
     {error && <div className="bg-red-800 p-2 text white">{}</div>}
       <Slideshow slides={homeData?.data?.slideshow} />
+{/*     <PagesTopBanner image={slideshowImage} heading1={slideshowHeading1} heading2={slideshowHeading2}/>  */}
       <WhatWOffer offers={homeData?.data?.whatWeOffer} />
       <AboutCompany about={homeData?.data?.aboutCompany} />
       <Portfolio projects={homeData?.data?.projects} />

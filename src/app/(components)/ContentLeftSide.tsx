@@ -16,7 +16,7 @@ type ContentProps = {
 
 const ContentLeftSide = ({ item }: ContentProps) => {
   return (
-    <section  className="grid md:grid-cols-2 gap-5 items-center md:px-0 px-5 py-20 max-w-screen-xl mx-auto ">
+    <section  className="grid md:grid-cols-2 gap-20 items-center md:px-0 px-5 py-20 max-w-screen-xl mx-auto ">
    
       <div>
         <div className="mb-10">
@@ -31,7 +31,7 @@ const ContentLeftSide = ({ item }: ContentProps) => {
           <ReactMarkdown>{item?.content}</ReactMarkdown>
         </div>
 
-        <div className="flex justify-center py-10">
+        <div className="flex justify-left py-10">
           <Link href="/">
             <p className="bg-[#BC9B5F] px-5 py-1 inline text-xs rounded-md uppercase text-white">
               {item?.buttonText}
