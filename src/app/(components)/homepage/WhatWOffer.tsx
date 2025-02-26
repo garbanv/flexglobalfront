@@ -35,13 +35,13 @@ export default function WhatWOffer({ offers }: WhatWeOffer) {
         <div className="grid md:grid-cols-4 grid-cols-1 gap-x-5 my-10">
           {offers?.offerCard?.map((offer, index) => {
             return (
-              <div className="bg-white shadow-xl p-10 rounded-md" key={index}>
+              <div className="bg-white shadow-xl p-10 rounded-md " key={index}>
                 {/* <FaBagShopping size={50}/> */}
-                <img src={process.env.NEXT_PUBLIC_APP_URL+offer?.image?.url} className="relative -left-5" alt="" width="80px"/>
+                <div className="flex justify-center"><img src={process.env.NEXT_PUBLIC_APP_URL+offer?.image?.url} className="" alt="" width="120px"/></div>
                 
-                <h3 className="py-5 font-bold">{offer?.text}</h3>
-                <p>{offer?.description}.</p>
-                <div className="my-5 flex gap-x-2 items-center">
+                <h3 className="py-5 font-bold text-center">{offer?.text}</h3>
+                <p className="text-center">{offer?.description}.</p>
+                <div className="my-5 flex gap-x-2 items-center justify-center">
                   <Link href="/" className="underline ">
                     {offer?.linkText}
                   </Link>
