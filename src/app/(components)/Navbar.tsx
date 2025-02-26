@@ -4,13 +4,13 @@ import { FaArrowRight } from "react-icons/fa6";
 import TopHeader from "./TopHeader";
 import Link from "next/link";
 import localeStore from "../(stores)/languageStore";
-
+import { usePathname } from 'next/navigation'
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 const lang = localeStore((state)=>state.locale)
   
-
+const pathname = usePathname()
 const ref = useRef(null)
 
   const updateLang = localeStore((state)=>state.updateLocale)
@@ -247,7 +247,7 @@ const ref = useRef(null)
             <li>
               <Link
                 href="/"
-                className="block py-2 px-3 text-black bg-blue-700 rounded-sm md:bg-transparent hover:text-yellow-700 hover:text-yellow-700 "
+                className={`block py-2 px-3 ${pathname==='/'?'text-yellow-700':'text-black'}  bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700 hover:text-yellow-700 `}
                 aria-current="page"
                 ref={ref}
                 onClick={(e)=>console.log("ref.current",ref.current)}
@@ -258,7 +258,7 @@ const ref = useRef(null)
             <li>
               <Link
                 href="/health-plans"
-                className="block py-2 px-3 text-black bg-blue-700 rounded-sm md:bg-transparent hover:text-yellow-700 "
+                className={`block py-2 px-3 ${pathname==='/health-plans'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700  `}
                 aria-current="page"
                
               >
@@ -310,13 +310,13 @@ const ref = useRef(null)
             <li>
               <Link
                 href="/services"
-                className="block py-2 px-3 text-black bg-blue-700 rounded-sm md:bg-transparent hover:text-yellow-700 "
+                className={`block py-2 px-3 ${pathname==='/services'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700 `}
               >
                 {lang === 'en'? 'Services':'Servicios'}  
               </Link>
             </li>
             <li>
-              <div className="block py-2 px-3 text-black bg-blue-700 rounded-sm md:bg-transparent hover:text-yellow-700" >
+              <div className={`block py-2 px-3 ${pathname==='/links'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
               <button
                 onClick={toggleLinksDropdown}
                 className="flex items-center block py-2 px-3 hover:text-yellow-700 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent  md:p-0   "
@@ -365,7 +365,7 @@ const ref = useRef(null)
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-black bg-blue-700 rounded-sm md:bg-transparent hover:text-yellow-700 "
+                className={`block py-2 px-3 ${pathname==='/about'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} 
               >
                 {lang === 'en' ? 'About':'Acerca de'}
               </a>
@@ -373,13 +373,13 @@ const ref = useRef(null)
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-black bg-blue-700 rounded-sm md:bg-transparent hover:text-yellow-700 "
+                className={`block py-2 px-3 ${pathname==='/recurses'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700 `}
               >
                 {lang === 'en'? 'Recurses':'Recursos'}
               </a>
             </li>
-            <li className="block py-2 px-3 text-black bg-blue-700 rounded-sm md:bg-transparent " onClick={()=>updateLang('es')}>ES</li>
-            <li className="block py-2 px-3 text-black bg-blue-700 rounded-sm md:bg-transparent " onClick={()=>updateLang("en")}>EN</li>
+            <li className="block py-2 px-3 text-black bg-gray-50 rounded-sm md:bg-transparent " onClick={()=>updateLang('es')}>ES</li>
+            <li className="block py-2 px-3 text-black bg-gray-50 rounded-sm md:bg-transparent " onClick={()=>updateLang("en")}>EN</li>
           </ul>
         </div>
       </div>

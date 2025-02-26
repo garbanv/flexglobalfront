@@ -20,7 +20,7 @@ const Consultations = ({consultations}: ConsultationsProps) => {
 
 
   if(!consultations){
-    return 'no consultations yet'
+    return ''
   }
   return (
     <section   className="relative  w-full  bg-full bg-center bg-fixed"
