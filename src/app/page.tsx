@@ -48,7 +48,9 @@ export default function Home() {
   return (
     <>
     {error && <div className="bg-red-800 p-2 text white">{}</div>}
+    <Suspense fallback={<div>Loading...</div>}>
       <Slideshow slides={homeData?.data?.slideshow} />
+      </Suspense>
 {/*     <PagesTopBanner image={slideshowImage} heading1={slideshowHeading1} heading2={slideshowHeading2}/>  */}
       <WhatWOffer offers={homeData?.data?.whatWeOffer} />
       <AboutCompany about={homeData?.data?.aboutCompany} />
