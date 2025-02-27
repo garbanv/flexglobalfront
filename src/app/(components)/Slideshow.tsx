@@ -2,9 +2,6 @@
 import { useState, useEffect, useRef, use, startTransition } from "react";
 import Loader from "./Loader";
 import { useInView } from "react-intersection-observer";
-import Image from "next/image";
-import next from 'next'
-
 
 interface SlideshowProps {
   slides?: {
@@ -103,20 +100,11 @@ const Slideshow = ({ slides }: SlideshowProps) => {
 
   return (
     <section id="slideshoww" data-testid="custom-element"
-      className="relative  w-full h-[660px] bg-cover bg-center transition-all duration-500 overflow-hidden" // Added transition
-      /* style={{
+      className="relative  w-full h-[600px] bg-cover bg-center transition-all duration-500 overflow-hidden" // Added transition
+      style={{
         backgroundImage: `url(${process.env.NEXT_PUBLIC_APP_URL}${currentService?.image?.url})`, // Dynamic image URL
-      }} */
+      }}
     >
-      {/* <img className="bg-cover bg-center transition-all duration-500 overflow-hidden" src={`${process.env.NEXT_PUBLIC_APP_URL}${currentService?.image?.url}`} alt=""  loading="lazy" /> */}
-      <Image
-      src={`https://flexglobaladmin.agarban.com${currentService?.image?.url}`}
-   fill
-   style={{objectFit: 'fill'}}
-   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=="
-     loading = 'lazy'
-      alt="Picture of the author"
-    />
       <div className="absolute inset-0 bg-black opacity-80 transition-all duration-500"></div>{" "}
       {/* Added transition */}
       <div className="bg-opacity-50 absolute inset-0 mx-auto max-w-screen-xl transition-all duration-500">
