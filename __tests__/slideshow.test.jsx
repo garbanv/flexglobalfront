@@ -63,7 +63,7 @@ const mockSlides = [
     /*  expect(screen.getByTestId('custom-element')).toHaveStyle(
         `background-image: url(${process.env.NEXT_PUBLIC_APP_URL}/slide1.jpg)`
       ); */
-   /*  expect(screen.getByTestId('custom-element')).toHaveStyle(
+    expect(screen.getByTestId('custom-element')).toHaveStyle(
         `background-image: url(${process.env.NEXT_PUBLIC_APP_URL}/slide1.jpg)`
-      ); */
+      );
   });
