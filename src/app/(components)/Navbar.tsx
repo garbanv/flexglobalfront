@@ -197,6 +197,36 @@ const ref = useRef(null)
     setLinksDropdownOpen(!linksDropdownOpen);
   };
 
+const servicesNav = [
+
+{
+  id:2,
+  link:'/services',
+  text:lang ==='en' ? 'best insurance plan':'mejor plan de seeguro'
+  }
+  ,
+  {
+id:3,
+link:'/services',
+text:lang ==='en' ? 'Benefits of your insurance':'beneficios de tu seguro'
+},
+
+  {
+    id:5,
+    link:'/services',
+    text:lang ==='en' ? 'Plan medical visit':'agenda una cita médica'
+    },
+    {
+      id:6,
+      link:'/services',
+      text:lang ==='en' ? 'Search doctors and hospitals':'Busca médicos y hospitales'
+      },
+      {
+        id:7,
+        link:'/team',
+        text:lang ==='en' ? 'Team agents':'Equipo de agentes'
+        }
+  ]
 
 
   return (
@@ -255,7 +285,7 @@ const ref = useRef(null)
                 {lang === 'en' ? 'Home':'Inicio'}
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/health-plans"
                 className={`block py-2 px-3 ${pathname==='/health-plans'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700  `}
@@ -264,11 +294,12 @@ const ref = useRef(null)
               >
                 {lang === 'en' ? 'Health Plans':'Planes de salud'}
               </Link>
-            </li>
-           {/*  <li>
+            </li> */}
+            <li>
+            <div className={`block py-2 px-3 ${pathname==='/links'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
               <button
                 onClick={toggleAboutDropdown}
-                className="flex items-center block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="flex items-center block py-2 px-3 hover:text-yellow-700 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent  md:p-0   "
               >
                 Health Plans
                 <svg
@@ -287,34 +318,80 @@ const ref = useRef(null)
                   ></path>
                 </svg>
               </button>
+              </div>
               {aboutDropdownOpen && (
                 <ul className="ml-4 md:ml-0 md:absolute z-10 bg-white dark:bg-gray-800 rounded-md shadow-lg "
                 onMouseLeave={()=>setAboutDropdownOpen(!aboutDropdownOpen)}>
                   <Link href="/health-plans#Obamacare (ACA)"
+                  scroll={true}
                   className="block py-2 px-4 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
-                      Obamacare-(ACA)
+                      Obamacare (ACA)
                   </Link>
 
                   <Link href="/health-plans#Individual and Family plans"
+                  scroll={true}
                   className="block py-2 px-4 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
-                      Individual-and-Family-plans
+                      Individual and Family plans
                   </Link>
-                  <Link href="/health-plans#Medicare y Medacaid"
+                  <Link href="/health-plans#Medicare and Medacaid"
+                  scroll={true}
                   className="block py-2 px-4 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
-                      Medicare-y-Medacaid
+                      Medicare and Medacaid
                   </Link>
               
                 </ul>
               )}
-            </li> */}
+            </li>
             <li>
+            <div className={`block py-2 px-3 ${pathname==='/links'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
+              <button
+                onClick={toggleServicesDropdown}
+                className="flex items-center block py-2 px-3 hover:text-yellow-700 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent  md:p-0   "
+              >
+                {lang ==='en' ? 'Services':'Servicios'}
+                <svg
+                  className={`w-4 h-4 ml-1 transition-transform ${
+                    servicesDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              </div>
+              {servicesDropdownOpen && (
+                <ul className="ml-4 md:ml-0 md:absolute z-10 bg-white dark:bg-gray-800 rounded-md shadow-lg "
+                onMouseLeave={()=>setServicesDropdownOpen(!servicesDropdownOpen)}>
+                 {servicesNav.map((service,index)=>{
+                  return (
+                    <Link href={service.link} key={index}
+                    scroll={true}
+                    className="block uppercase py-2 px-4 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                        {service.text}
+                    </Link>
+                  )
+                 })}
+
+                  
+              
+                </ul>
+              )}
+            </li>
+           {/*  <li>
               <Link
                 href="/services"
                 className={`block py-2 px-3 ${pathname==='/services'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700 `}
               >
                 {lang === 'en'? 'Services':'Servicios'}  
               </Link>
-            </li>
+            </li> */}
             <li>
               <div className={`block py-2 px-3 ${pathname==='/links'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
               <button

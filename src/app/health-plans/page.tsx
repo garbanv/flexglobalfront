@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PagesTopBanner from "../(components)/PagesTopBanner";
 import localeStore from "../(stores)/languageStore";
 import { HealthPlansTypes } from "../utils/healthPlansTypes";
@@ -13,6 +13,7 @@ const Page = () => {
   const lang = localeStore((state) => state.locale);
   const [data, setHealthPlansData] = useState<HealthPlansTypes | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const contentRef = useRef(null); // Create a ref for the content container
 
   const [error, setError] = useState<string>("");
   useEffect(() => {
@@ -23,6 +24,21 @@ const Page = () => {
     }
   }, [lang]);
 
+  useEffect(() => {
+    if (data) {
+      const hash = window.location.hash;
+      if (hash) {
+   
+        const sectionId = hash.substring(1).replace(/\s+/g, "-").replaceAll('%20',' ');
+        const element = document.getElementById(sectionId);
+        console.log("hash",sectionId)
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+  }, [data]); 
+
 
   return (
     <div>
@@ -31,7 +47,7 @@ const Page = () => {
         heading1={data ? data?.heading1 : ""}
         heading2={data ? data?.heading2 : ""}
       />
-      <div className="">
+      <div className="" ref={contentRef}>
         {data?.contentSide.map((item, index) => {
           return (
             <div

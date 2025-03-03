@@ -31,7 +31,7 @@ const Portfolio = ({ projects }: ProjectsProps) => {
             return (
               <a href={image?.imageLink} className="" key={index}>
                 <img
-                  src={process.env.NEXT_PUBLIC_APP_URL + image?.image?.url}
+                  src={image?.image?.url}
                   className="rounded-md"
                   alt="image"
                 />

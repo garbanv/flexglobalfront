@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 
 type ContentProps = {
@@ -14,11 +14,21 @@ type ContentProps = {
     }
 }
 
+
+
 const ContentRightSide = ({item}: ContentProps) => {
+  
+  
+  
+  
+  
+  
+  
   return (
-    <section  className="grid md:grid-cols-2 gap-20 items-center md:px-0 px-5 py-20 max-w-screen-xl mx-auto ">
+    
+    <section  id={item?.contentTitleLine1}  className="grid md:grid-cols-2 gap-20 items-center md:px-0 px-5 py-20 max-w-screen-xl mx-auto ">
      <div>
-                <img src={process.env.NEXT_PUBLIC_APP_URL+item?.image.url} alt="flex global" />
+                <img src={item?.image.url} alt="flex global" />
               </div>
               <div>
                 <div className="mb-10">

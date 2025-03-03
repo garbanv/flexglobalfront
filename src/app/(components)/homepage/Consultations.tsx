@@ -54,7 +54,7 @@ const Consultations = ({consultations}: ConsultationsProps) => {
 
           <div className="relative md:w-1/2 w-2/2 flex justify-center ">
             <img
-              src={process.env.NEXT_PUBLIC_APP_URL+consultations?.image?.url}
+              src={consultations?.image?.url}
               alt="Consultant"
               className="absolute right-0 -bottom-10  rounded-lg  shadow-lg md:block hidden"
               width={500}

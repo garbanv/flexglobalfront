@@ -102,7 +102,7 @@ const Slideshow = ({ slides }: SlideshowProps) => {
     <section id="slideshoww" data-testid="custom-element"
       className="relative  w-full h-[600px] bg-cover bg-center transition-all duration-500 overflow-hidden" // Added transition
       style={{
-        backgroundImage: `url(${process.env.NEXT_PUBLIC_APP_URL}${currentService?.image?.url})`, // Dynamic image URL
+        backgroundImage: `url(${currentService?.image?.url})`, // Dynamic image URL
       }}
     >
    {/*    <div className="absolute inset-0 bg-black opacity-80 transition-all duration-500"></div>{" "} */}

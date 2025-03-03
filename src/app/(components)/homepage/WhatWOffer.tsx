@@ -37,7 +37,7 @@ export default function WhatWOffer({ offers }: WhatWeOffer) {
             return (
               <div className="bg-white shadow-xl p-10 rounded-md " key={index}>
                 {/* <FaBagShopping size={50}/> */}
-                <div className="flex justify-center"><img src={process.env.NEXT_PUBLIC_APP_URL+offer?.image?.url} className="" alt="" width="120px"/></div>
+                <div className="flex justify-center"><img src={offer?.image?.url} className="" alt="" width="120px"/></div>
                 
                 <h3 className="py-5 font-bold text-center">{offer?.text}</h3>
                 <p className="text-center">{offer?.description}.</p>
