@@ -105,7 +105,7 @@ const Slideshow = ({ slides }: SlideshowProps) => {
         backgroundImage: `url(${process.env.NEXT_PUBLIC_APP_URL}${currentService?.image?.url})`, // Dynamic image URL
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-80 transition-all duration-500"></div>{" "}
+   {/*    <div className="absolute inset-0 bg-black opacity-80 transition-all duration-500"></div>{" "} */}
       {/* Added transition */}
       <div className="bg-opacity-50 absolute inset-0 mx-auto max-w-screen-xl transition-all duration-500">
         {" "}
