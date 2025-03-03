@@ -40,7 +40,7 @@ const Team = ({team}: TeamProps) => {
           <div className="max-w-xs w-full bg-white shadow-lg rounded-lg " key={index}>
           <div className="relative">
             <img
-              src={process.env.NEXT_PUBLIC_APP_URL+member?.image?.url} 
+              src={member?.image?.url} 
               alt="Team Member"
               className="w-full h-64 object-cover"
             />

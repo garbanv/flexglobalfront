@@ -32,7 +32,7 @@ const PagesTopBanner = ({image, heading1,heading2}:PagesTopBanner) => {
           id="banner"
           className="relative  w-full h-[500px] slide-bck-center"
           style={{
-            backgroundImage: `url(${process.env.NEXT_PUBLIC_APP_URL}${image})`,
+            backgroundImage: `url(${image})`,
           }}
         >
           {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}

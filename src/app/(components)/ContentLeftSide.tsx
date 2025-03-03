@@ -16,7 +16,7 @@ type ContentProps = {
 
 const ContentLeftSide = ({ item }: ContentProps) => {
   return (
-    <section  className="grid md:grid-cols-2 gap-20 items-center md:px-0 px-5 py-20 max-w-screen-xl mx-auto ">
+    <section id={item?.contentTitleLine1}   className="grid md:grid-cols-2 gap-20 items-center md:px-0 px-5 py-20 max-w-screen-xl mx-auto ">
    
       <div>
         <div className="mb-10">
@@ -40,7 +40,7 @@ const ContentLeftSide = ({ item }: ContentProps) => {
         </div>
       </div>
       <div>
-        <img src={process.env.NEXT_PUBLIC_APP_URL+item?.image.url} alt="flex global" />
+        <img src={item?.image.url} alt="flex global" />
       </div>
     </section>
   );

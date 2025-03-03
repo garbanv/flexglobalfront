@@ -37,7 +37,7 @@ export default function ServicesPage() {
       <div className="max-w-screen-xl mx-auto py-20">
         <div className="grid md:grid-cols-2 gap-20 items-center md:px-0 px-5">
           <div>
-            <img src="/asesoria.png" alt="flex global" />
+            <img src={data?.contentSide?.image?.url } alt="flex global" />
           </div>
           <div>
             <div className="mb-10">

@@ -25,7 +25,7 @@ const AboutCompany = ({about}:AboutProps) => {
       <div className="relative mx-auto max-w-xl rounded-2xl bg-white shadow-lg md:px-0 px-5">
         <div className="flex items-center justify-center bg-gray-200">
           <img
-            src={(process.env.NEXT_PUBLIC_APP_URL as string)+about?.image?.url}
+            src={about?.image?.url}
             alt="Family sitting on a couch"
             className="h-auto w-full object-cover"
           />
