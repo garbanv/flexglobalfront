@@ -201,24 +201,24 @@ const servicesNav = [
 
 {
   id:2,
-  link:'/services',
+  link:'/services#services',
   text:lang ==='en' ? 'best insurance plan':'mejor plan de seeguro'
   }
   ,
   {
 id:3,
-link:'/services',
+link:'/services#services',
 text:lang ==='en' ? 'Benefits of your insurance':'beneficios de tu seguro'
 },
 
   {
     id:5,
-    link:'/services',
+    link:'/services#services',
     text:lang ==='en' ? 'Plan medical visit':'agenda una cita médica'
     },
     {
       id:6,
-      link:'/services',
+      link:'/services#services',
       text:lang ==='en' ? 'Search doctors and hospitals':'Busca médicos y hospitales'
       },
       {
@@ -430,7 +430,7 @@ text:lang ==='en' ? 'Benefits of your insurance':'beneficios de tu seguro'
                   </li>
                   <li>
                     <a
-                      href="https://google.com"
+                      href="/links/contact-us"
                       className="block py-2 px-4 text-gray-900 dark:text-white hover:bg-gray-100 rounded-md dark:hover:bg-gray-700"
                     >
                       Complaints and suggestions

@@ -13,6 +13,8 @@ const VirtualAgentBanner = () => {
         <div className="flex flex-col md:items-end items-center">
          <h3 className="text-5xl font-bold ">{lang === 'en' ?'VIRTUAL':'ASISTENTE'}</h3>
         <h3 className="text-5xl font-bold ">{lang==='en' ? 'ASISTANT':'VIRTUAL'}</h3>
+        
+        <h3 className="text-xl font-bold ">Phone: +1 555-555-555</h3>
         </div>
        
         <div className="flex flex-col md:items-end items-center my-10">
