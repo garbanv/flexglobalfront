@@ -56,7 +56,7 @@ export const getServicesData = async ({
 }: SetServiceDataProps) => {
   try {
     const data = fetch(
-      `${process.env.NEXT_PUBLIC_APP_URL}/api/service?populate=contentSide.image&populate=featuredImage&locale=${lang}`,
+      `${process.env.NEXT_PUBLIC_APP_URL}/api/service?populate=contentSide.image&populate=featuredImage&populate=serviceCard.image&locale=${lang}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_APP_TOKEN}`,

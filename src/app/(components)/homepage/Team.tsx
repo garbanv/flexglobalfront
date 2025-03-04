@@ -51,9 +51,9 @@ const Team = ({team}: TeamProps) => {
               </h2>
               <p>{member.position}</p>
              
-              <button className="mt-4 bg-black text-white px-4 py-3  shadow-md hover:bg-gray-800 absolute -right-0 -top-14">
+              {/* <button className="mt-4 bg-black text-white px-4 py-3  shadow-md hover:bg-gray-800 absolute -right-0 -top-14">
              <Link href="/">   <FaArrowRight /> </Link>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

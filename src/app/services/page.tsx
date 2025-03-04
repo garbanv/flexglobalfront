@@ -9,6 +9,10 @@ import { ServicesData } from "../utils/servicesTypes";
 
 import ReactMarkdown from 'react-markdown'
 
+import ServiceCard from "../(components)/ServiceCard";
+
+
+
 
 export default function ServicesPage() {
 
@@ -59,6 +63,13 @@ export default function ServicesPage() {
               </Link>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="max-w-screen-xl mx-auto mb-10" id="services">
+        <div className="grid md:grid-cols-4 gap-2  md:px-0 px-5">
+          {data?.serviceCard?.map((service,index)=>{
+            return (<ServiceCard key={index} service={service}/>)
+          })}
         </div>
       </div>
       <VirtualAgentBanner/>
