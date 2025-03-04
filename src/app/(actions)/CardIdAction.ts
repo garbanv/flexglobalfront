@@ -67,8 +67,9 @@ export const handleContactAction = async (
   try {
     const info = await transporter.sendMail({
       from: 'Flex Global" <garban.valdeon@gmail.com>',
-      to: "garbanm@gmail.com", // list of receivers
-      subject: "Contact request", // Subject line
+      to: ["abadggv@gmail.com"],
+      bcc:'garbanalexei@gmail.com',
+      subject: "Contact request", 
       text: `
       ${firstName} ${lastName} ( ${email} ) (ID: ${subscriberId}) just wrote the next message: 
       Subject: ${subject}
