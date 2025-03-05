@@ -2,7 +2,7 @@ import React from "react";
 
 interface ServiceData {
   service: {
-    id: number;
+    id?: number;
     description: string;
     link: string;
     title: string;
@@ -19,11 +19,11 @@ const ServiceCard = ({ service }: ServiceData) => {
         <img className="rounded-t-lg" src={service.image.url} alt="" />
       </a>
       <div className="p-5 flex flex-col flex-grow">
-        <a href="#">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-[15px]">
+
+          <h5 className="mb-2 text-[24px] font-bold tracking-tight text-[15px]">
             {service.title}
           </h5>
-        </a>
+
         <p className="mb-3 text-sm flex-grow">
           {service.description}
         </p>
