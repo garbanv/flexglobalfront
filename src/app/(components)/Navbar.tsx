@@ -299,7 +299,7 @@ text:lang ==='en' ? 'Benefits of your insurance':'beneficios de tu seguro'
             <div className={`block py-2 px-3 ${pathname==='/links'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
               <button
                 onClick={toggleAboutDropdown}
-                className="flex items-center block py-2 px-3 hover:text-yellow-700 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent  md:p-0   "
+                className={`${pathname.includes('health-plans')?'text-yellow-700':'text-black'} flex items-center block py-2 px-3 hover:text-yellow-700 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent  md:p-0   `}
               >
                 Health Plans
                 <svg
@@ -346,7 +346,7 @@ text:lang ==='en' ? 'Benefits of your insurance':'beneficios de tu seguro'
             <div className={`block py-2 px-3 ${pathname==='/links'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
               <button
                 onClick={toggleServicesDropdown}
-                className="flex items-center block py-2 px-3 hover:text-yellow-700 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent  md:p-0   "
+                className={`${pathname==='/services'?'text-yellow-700':'text-black'} flex items-center block py-2 px-3 hover:text-yellow-700 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent  md:p-0   `}
               >
                 {lang ==='en' ? 'Services':'Servicios'}
                 <svg
@@ -393,10 +393,10 @@ text:lang ==='en' ? 'Benefits of your insurance':'beneficios de tu seguro'
               </Link>
             </li> */}
             <li>
-              <div className={`block py-2 px-3 ${pathname==='/links'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
+              <div className={`block py-2 px-3 ${pathname.includes('links')?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
               <button
                 onClick={toggleLinksDropdown}
-                className="flex items-center block py-2 px-3 hover:text-yellow-700 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent  md:p-0   "
+                className={`${pathname.includes('links')?'text-yellow-700':'text-black'} flex items-center block py-2 px-3 hover:text-yellow-700 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent  md:p-0   `}
               >
                 Links
                 <svg
@@ -448,12 +448,12 @@ text:lang ==='en' ? 'Benefits of your insurance':'beneficios de tu seguro'
               </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className={`block py-2 px-3 ${pathname==='/recurses'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700 `}
+              <Link
+                href="/resources"
+                className={`block py-2 px-3 ${pathname==='/resources'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700 `}
               >
-                {lang === 'en'? 'Recurses':'Recursos'}
-              </a>
+                {lang === 'en'? 'Resources':'Recursos'}
+              </Link>
             </li>
             <li className="block py-2 px-3 text-black bg-gray-50 rounded-sm md:bg-transparent " onClick={()=>updateLang('es')}>ES</li>
             <li className="block py-2 px-3 text-black bg-gray-50 rounded-sm md:bg-transparent " onClick={()=>updateLang("en")}>EN</li>

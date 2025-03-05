@@ -3,6 +3,8 @@ import { HomeData } from "./homeTypes";
 import { ServicesData } from "./servicesTypes";
 import { HealthPlansTypes } from "./healthPlansTypes";
 import { AboutTypes } from "./aboutTypes";
+import { ResourcesTypes } from "./resourcesTypes";
+
 
 
 interface SetHomeDataProps {
@@ -25,6 +27,12 @@ interface SetHealthPlansDataProps {
 
 interface SetAboutDataProps {
   setAboutData: React.Dispatch<SetStateAction<AboutTypes | null>>;
+  setIsLoading: React.Dispatch<SetStateAction<boolean>>;
+  lang: string;
+}
+
+interface SetResourcesDataProps {
+  setResourcesData: React.Dispatch<SetStateAction<ResourcesTypes | null>>;
   setIsLoading: React.Dispatch<SetStateAction<boolean>>;
   lang: string;
 }
@@ -128,6 +136,33 @@ export const getAboutData = async ({
     const response = await data;
     const parsed = await response.json();
     setAboutData(parsed.data);
+    setIsLoading(false);
+  } catch (error) {
+    if(error){{
+      return {message:"an error ocurred", status:'FAIL'}
+    }}
+  }
+  
+};
+
+
+export const getResourcesData = async ({
+  setResourcesData,
+  setIsLoading,
+  lang,
+}: SetResourcesDataProps) => {
+  try {
+    const data = fetch(
+      `${process.env.NEXT_PUBLIC_APP_URL}/api/resource?populate=featuredImage&populate=serviceCard.image&locale=${lang}`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_APP_TOKEN}`,
+        },
+      }
+    );
+    const response = await data;
+    const parsed = await response.json();
+    setResourcesData(parsed.data);
     setIsLoading(false);
   } catch (error) {
     if(error){{

@@ -43,9 +43,8 @@ const AboutPage = () => {
             </div>
             <div>
               <div className="flex gap-x-5 items-center place-items-center">
-                <div id="slideRef" className={`text-black w-20 h-10 border-b border-black relative -top-4 `}></div>
-                {/* <h3 className="text-3xl font-bold text-[#BC9B5F] my-5"> */}
-                <h3 className="text-3xl font-bold  my-5">
+              {/*   <div id="slideRef" className={`text-black w-20 h-10 border-b border-black relative -top-4 `}></div> */}
+                <h3 className="text-3xl font-bold text-[#BC9B5F] my-5">
                   {lang === "en" ? "About Us" : "Nosotros"}
                 </h3>
               </div>

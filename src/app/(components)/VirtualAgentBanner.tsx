@@ -18,7 +18,7 @@ const VirtualAgentBanner = () => {
         </div>
        
         <div className="flex flex-col md:items-end items-center my-10">
-          <Link href="/">
+          <Link href="/links/contact-us">
             <p className="bg-[#BC9B5F] px-5 py-1 inline  rounded-md text-white uppercase">
             {lang==='en' ? 'Contact Us' : 'Contáctanos'}
             </p>
