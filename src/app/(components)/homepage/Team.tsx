@@ -23,7 +23,7 @@ interface TeamProps {
 
 const Team = ({team}: TeamProps) => {
   return (
-    <section className="py-10  w-full ">
+    <section className="py-5  w-full ">
       <div className="max-w-screen-xl  mx-auto ">
         <div className="">
           <h4 className="text-center uppercase underline text-xl my-10 font-bold">
