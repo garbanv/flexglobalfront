@@ -187,6 +187,7 @@ const ref = useRef(null)
 
   const toggleServicesDropdown = () => {
     setServicesDropdownOpen(!servicesDropdownOpen);
+    
   };
 
   const toggleAboutDropdown = () => {
@@ -295,14 +296,18 @@ text:lang ==='en' ? 'Benefits of your insurance':'beneficios de tu seguro'
                 {lang === 'en' ? 'Health Plans':'Planes de salud'}
               </Link>
             </li> */}
-            <li>
-            <div className={`block py-2 px-3 ${pathname==='/links'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
+            <li onMouseLeave={()=>setAboutDropdownOpen(false)}>
+            <div 
+   
+            className={`block py-2 px-3 ${pathname==='/links'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
               <button
                 onClick={toggleAboutDropdown}
+                
                 className={`${pathname.includes('health-plans')?'text-yellow-700':'text-black'} flex items-center block py-2 px-3 hover:text-yellow-700 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent  md:p-0   `}
               >
                 Health Plans
                 <svg
+                
                   className={`w-4 h-4 ml-1 transition-transform ${
                     aboutDropdownOpen ? "rotate-180" : ""
                   }`}
@@ -342,7 +347,7 @@ text:lang ==='en' ? 'Benefits of your insurance':'beneficios de tu seguro'
                 </ul>
               )}
             </li>
-            <li>
+            <li onMouseLeave={()=>setServicesDropdownOpen(false)}>
             <div className={`block py-2 px-3 ${pathname==='/links'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
               <button
                 onClick={toggleServicesDropdown}
@@ -392,7 +397,7 @@ text:lang ==='en' ? 'Benefits of your insurance':'beneficios de tu seguro'
                 {lang === 'en'? 'Services':'Servicios'}  
               </Link>
             </li> */}
-            <li>
+            <li onMouseLeave={()=>setLinksDropdownOpen(false)}>
               <div className={`block py-2 px-3 ${pathname.includes('links')?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} >
               <button
                 onClick={toggleLinksDropdown}
