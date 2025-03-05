@@ -36,14 +36,11 @@ const ResourcesPage = () => {
         <section>
           <div className="grid  items-center justify-center grid-cols-1 pt-10">
             <h3 className="text-3xl font-bold text-[#BC9B5F] my-5 text-center">
-              {lang === "en"
-                ? "Know more about our health plans"
-                : "Conoce más sobre nuestros planes de salud"}
+              {data?.heading3}
             </h3>
 
             <p className="font-bold text-xl mb-5 text-center">
-              Los planes del Mercado de Seguros Médicos se dividen en 4
-              categorías de "metal":
+              {data?.heading4}
             </p>
           </div>
           {/* <h1 className="text-3xl font-bold text-center mb-10">About Us</h1> */}
