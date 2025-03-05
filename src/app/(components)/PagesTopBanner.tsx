@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 interface PagesTopBanner  {
     image: string
     heading1: string
-    heading2: string
+    heading2?: string
 }
 
 const PagesTopBanner = ({image, heading1,heading2}:PagesTopBanner) => {
@@ -35,7 +35,7 @@ const PagesTopBanner = ({image, heading1,heading2}:PagesTopBanner) => {
             backgroundImage: `url(${image})`,
           }}
         >
-          {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
+          <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="max-w-screen-xl mx-auto pt-36 ">
             <h3 className={`relative  text-white font-bold text-[60px] md:px-0 px-5 ${ inView ? "slide-top" : ""}`} ref={ref}>
             {/* {lang === 'en' ? 'Our' : 'Nuestros'} */}

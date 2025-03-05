@@ -440,12 +440,12 @@ text:lang ==='en' ? 'Benefits of your insurance':'beneficios de tu seguro'
               )}
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/about"
                 className={`block py-2 px-3 ${pathname==='/about'?'text-yellow-700':'text-black'} bg-gray-50 rounded-sm md:bg-transparent hover:text-yellow-700`} 
               >
                 {lang === 'en' ? 'About':'Acerca de'}
-              </a>
+              </Link>
             </li>
             <li>
               <a
